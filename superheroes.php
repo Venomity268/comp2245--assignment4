@@ -63,10 +63,29 @@ $superheroes = [
   ], 
 ];
 
-?>
+// Sanitize user input
+$query = filter_input(INPUT_GET, 'query', FILTER_SANITIZE_STRING);
 
-<ul>
-<?php foreach ($superheroes as $superhero): ?>
-  <li><?= $superhero['alias']; ?></li>
-<?php endforeach; ?>
-</ul>
+if ($query) {
+    $query = strtolower($query);
+    $found = false;
+
+    foreach ($superheroes as $superhero) {
+        if (strtolower($superhero['alias']) === $query || strtolower($superhero['name']) === $query) {
+            echo "<h3>{$superhero['alias']}</h3><h4>{$superhero['name']}</h4><p>{$superhero['biography']}</p>";
+            $found = true;
+            break;
+        }
+    }
+
+    if (!$found) {
+        echo "<p style='color: red;'>Superhero not found</p>";
+    }
+} else {
+    echo "<ul>";
+    foreach ($superheroes as $superhero) {
+        echo "<li>{$superhero['alias']}</li>";
+    }
+    echo "</ul>";
+}
+?>

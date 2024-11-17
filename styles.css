@@ -1,0 +1,84 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #00c6ff, #0072ff);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #fff;
+}
+
+.container {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 20px 40px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 400px;
+    color: #333;
+}
+
+h1 {
+    color: #0072ff;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+p {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+#searchField {
+    padding: 10px;
+    width: calc(100% - 22px);
+    font-size: 14px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    background: #0072ff;
+    color: white;
+    padding: 10px 20px;
+    font-size: 14px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+#result {
+    margin-top: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background: #f9f9f9;
+    text-align: left;
+    font-size: 14px;
+    color: #333;
+}
+
+#result h3 {
+    color: #0072ff;
+}
+
+#result h4 {
+    color: #0056b3;
+}
+
+#result p {
+    color: #555;
+}
+
+#result p[style*="color: red"] {
+    font-weight: bold;
+}
